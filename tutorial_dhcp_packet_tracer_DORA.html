@@ -712,11 +712,7 @@
  Pending event                  : none</span></code></pre>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 11</div>
-        <div class="screenshot-desc">Output di show ip dhcp pool sul router: pool LAN con 2 leased, pool PC2-RESERVED con 1 leased.</div>
-      </div>
+      <IMG src="CLI-pool.png">
     </div>
 
     <h3>9.2 – Verifica sul router: show ip dhcp binding</h3>
@@ -734,11 +730,7 @@ IP address       Client-ID/              Lease expiration        Type
     <p>La colonna <em>Type</em> mostra: <strong>Manual</strong> per la prenotazione di PC-2 (senza scadenza) e <strong>Automatic</strong> per i binding dinamici di PC-3 e PC-4 con scadenza a 12 ore.</p>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 12</div>
-        <div class="screenshot-desc">Output di show ip dhcp binding: binding Manual per PC-2 (192.168.0.20) e Automatic per PC-3 e PC-4 con scadenza a 12 ore.</div>
-      </div>
+      <IMG src="CLI-binding.png">
     </div>
 
     <h3>9.3 – Verifica sui client: ipconfig</h3>
@@ -773,11 +765,7 @@ IP address       Client-ID/              Lease expiration        Type
 <span class="kw">C:\&gt;</span> <span class="val">ping &lt;IP-di-PC-4&gt;</span></code></pre>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 13</div>
-        <div class="screenshot-desc">Output del ping da PC-3 verso il router (192.168.0.1) e verso gli altri client con risposta positiva (0% packet loss).</div>
-      </div>
+      <IMG src="pc3-ping.png">
     </div>
 
     <h3>9.5 – Simulazione del processo DORA in Simulation Mode</h3>
@@ -800,11 +788,7 @@ IP address       Client-ID/              Lease expiration        Type
     </div>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 14</div>
-        <div class="screenshot-desc">Pannello Simulation con Edit Filters aperto: solo DHCP selezionato tra i protocolli attivi.</div>
-      </div>
+      <IMG src="pdu-pc4.png">
     </div>
 
     <h3>Passo 1 — DHCPDISCOVER (PC-4 → broadcast)</h3>
@@ -826,11 +810,7 @@ IP address       Client-ID/              Lease expiration        Type
     </div>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 15</div>
-        <div class="screenshot-desc">PDU Inspector del DHCPDISCOVER: scheda OSI Model con Src IP 0.0.0.0, Dst IP 255.255.255.0 e il campo chaddr con il MAC di PC-4.</div>
-      </div>
+      <IMG src="pdu2.png">
     </div>
 
     <h3>Passo 2 — DHCPOFFER (Router-DHCP → PC-4)</h3>
@@ -859,11 +839,7 @@ IP address       Client-ID/              Lease expiration        Type
     </div>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 16</div>
-        <div class="screenshot-desc">PDU Inspector del DHCPOFFER: campo yiaddr con l'IP offerto (es. 192.168.0.16), Src IP 192.168.0.1 e le opzioni Subnet Mask e Router visibili.</div>
-      </div>
+      <IMG src="pdu3.png">
     </div>
 
     <h3>Passo 3 — DHCPREQUEST (PC-4 → broadcast)</h3>
@@ -891,11 +867,7 @@ IP address       Client-ID/              Lease expiration        Type
     </div>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 17</div>
-        <div class="screenshot-desc">PDU Inspector del DHCPREQUEST: Src IP ancora 0.0.0.0, Dst broadcast, opzione Requested IP Address con l'indirizzo offerto e Server Identifier 192.168.0.1.</div>
-      </div>
+      <IMG src="pdu4.png">
     </div>
 
     <h3>Passo 4 — DHCPACK (Router-DHCP → PC-4)</h3>
@@ -915,11 +887,7 @@ IP address       Client-ID/              Lease expiration        Type
     </div>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 18</div>
-        <div class="screenshot-desc">PDU Inspector del DHCPACK: Message Type 5, yiaddr con l'IP definitivo assegnato a PC-4, opzioni Router e Subnet Mask presenti.</div>
-      </div>
+      <IMG src="pdu5.png">
     </div>
 
     <h3>Riepilogo visivo della Event List</h3>
@@ -974,11 +942,7 @@ IP address       Client-ID/              Lease expiration        Type
     </div>
 
     <div class="screenshot">
-      <div class="screenshot-inner">
-        <div class="screenshot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M3 8h18"/></svg></div>
-        <div class="screenshot-label">📷 Screenshot 19</div>
-        <div class="screenshot-desc">Event List completa con i 4 eventi DORA in sequenza: Discover, Offer, Request, Ack. Ogni riga mostra mittente, destinatario e tipo di pacchetto.</div>
-      </div>
+      <IMG src="eventlist.png">
     </div>
 
     <div class="callout note">
